@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="08a4331d-3527-4ebb-9fd2-057987fd5cc0" name="Default Changelist" comment="Draft - Initial commit">
+      <change afterPath="$PROJECT_DIR$/.idea/Resume.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CV_me/Awards/section_awards.tex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CV_me/Education/section_education.tex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CV_me/Experience_short/section_experience_short.tex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CV_me/Experiences/section_experiences.tex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CV_me/Headline/section_headline.tex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CV_me/Interests/section_interests.tex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CV_me/Languages/section_languages.tex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CV_me/Publications/section_publications.tex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CV_me/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CV_me/References/section_references.tex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CV_me/Skill/section_skills.tex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CV_me/awesome-cv.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CV_me/awesome-cv.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CV_me/awesome-cv.tex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CV_me/awesome-source-cv.cls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CV_me/fontawesome.sty" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CV_me/fontawesomesymbols-generic.tex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CV_me/fontawesomesymbols-pdftex.tex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CV_me/fontawesomesymbols-xeluatex.tex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Report_Latex/Abstract/abstract.aux" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Report_Latex/Abstract/abstract.tex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Report_Latex/Acknowledgement/acknowledgement.aux" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Report_Latex/Acknowledgement/acknowledgement.tex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Report_Latex/Appendix1/appendix1.aux" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Report_Latex/Appendix1/appendix1.tex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Report_Latex/Appendix2/appendix2.aux" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Report_Latex/Appendix2/appendix2.tex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Report_Latex/Chapter1/Chapter1Figs/EPS/aflow.eps" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Report_Latex/Chapter1/Chapter1Figs/aflow.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Report_Latex/Chapter1/Chapter1Figs/aflow.ps" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Report_Latex/Chapter1/chapter1.aux" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Report_Latex/Chapter1/chapter1.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Report_Latex/Chapter1/chapter1.tex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Report_Latex/Chapter1/chapter1.texshop" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Report_Latex/Chapter2/chapter2.aux" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Report_Latex/Chapter2/chapter2.tex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Report_Latex/Chapter3/Chapter3Figs/PDF/TUISecurityDesign.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Report_Latex/Chapter3/Chapter3Figs/PDF/TUISecurityGoals.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Report_Latex/Chapter3/Chapter3Figs/PDF/TUISecurityPackageDesign.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Report_Latex/Chapter3/Chapter3Figs/PDF/tui-RecordingFeatureSequenceDiagram.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Report_Latex/Chapter3/Chapter3Figs/PDF/tui-SettingFeature.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Report_Latex/Chapter3/Chapter3Figs/PDF/tui-after-installed.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Report_Latex/Chapter3/Chapter3Figs/PDF/tui-app-features.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Report_Latex/Chapter3/Chapter3Figs/PDF/tui-auto-recording.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Report_Latex/Chapter3/Chapter3Figs/PDF/tui-controls.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Report_Latex/Chapter3/Chapter3Figs/PDF/tui-get-phone-info-controls.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Report_Latex/Chapter3/Chapter3Figs/PDF/tui-main.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Report_Latex/Chapter3/Chapter3Figs/PDF/tui-reading.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Report_Latex/Chapter3/Chapter3Figs/PDF/tui-results.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Report_Latex/Chapter3/chapter3.aux" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Report_Latex/Chapter3/chapter3.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Report_Latex/Chapter3/chapter3.tex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Report_Latex/Classes/CUEDbiblio.bst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Report_Latex/Classes/CUEDthesisPSnPDF.cls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Report_Latex/Classes/CUEDthesisPSnPDF.texshop" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Report_Latex/Classes/jmb.bst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Report_Latex/Classes/uitBA.cls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Report_Latex/Classes/uitBA.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Report_Latex/Conclusions/conclusions.aux" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Report_Latex/Conclusions/conclusions.tex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Report_Latex/Conclusions/conclusions.texshop" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Report_Latex/Dedication/dedication.aux" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Report_Latex/Dedication/dedication.tex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Report_Latex/Introduction/introduction.aux" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Report_Latex/Introduction/introduction.tex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Report_Latex/Introduction/introduction.texshop" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Report_Latex/Macros/MacroFile1.tex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Report_Latex/Makefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Report_Latex/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Report_Latex/References/references.bib" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Report_Latex/StyleFiles/watermark.sty" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Report_Latex/ThesisFigs/.xvpics/CUc_LJ.eps" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Report_Latex/ThesisFigs/.xvpics/CUnibig1.eps" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Report_Latex/ThesisFigs/.xvpics/CUnibig1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Report_Latex/ThesisFigs/.xvpics/CUnibig2.eps" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Report_Latex/ThesisFigs/.xvpics/CUnibig2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Report_Latex/ThesisFigs/UITLogo.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Report_Latex/ThesisFigs/UnivShield.eps" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Report_Latex/ThesisFigs/UnivShield.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Report_Latex/ThesisFigs/UnivShield2.eps" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Report_Latex/ThesisFigs/UnivShield2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Report_Latex/notes.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Report_Latex/notes.tex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Report_Latex/security.bib" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Report_Latex/uitthesis.aux" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Report_Latex/uitthesis.bbl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Report_Latex/uitthesis.blg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Report_Latex/uitthesis.brf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Report_Latex/uitthesis.lof" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Report_Latex/uitthesis.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Report_Latex/uitthesis.nlo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Report_Latex/uitthesis.out" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Report_Latex/uitthesis.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Report_Latex/uitthesis.tex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Report_Latex/uitthesis.toc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fonts/FontAwesome.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fonts/SourceSansPro-Black.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fonts/SourceSansPro-BlackIt.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fonts/SourceSansPro-Bold.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fonts/SourceSansPro-BoldIt.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fonts/SourceSansPro-ExtraLight.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fonts/SourceSansPro-ExtraLightIt.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fonts/SourceSansPro-It.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fonts/SourceSansPro-Light.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fonts/SourceSansPro-LightIt.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fonts/SourceSansPro-Regular.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fonts/SourceSansPro-Semibold.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fonts/SourceSansPro-SemiboldIt.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fonts/fontawesome.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/avatar.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/logo/per1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/logo/per2.jpg" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="30">
+                <caret line="2" column="24" lean-forward="true" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CV_me/awesome-cv.tex">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="577">
+              <caret line="40" column="23" selection-start-line="40" selection-start-column="23" selection-end-line="40" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/CV_me/awesome-cv.tex" />
+        <option value="$PROJECT_DIR$/CV_me/README.md" />
+        <option value="$PROJECT_DIR$/Report_Latex/README.md" />
+        <option value="$PROJECT_DIR$/README.md" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="212" />
+    <option name="y" value="274" />
+    <option name="width" value="773" />
+    <option name="height" value="896" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Resume" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Resume" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Resume" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Resume" type="462c0819:PsiDirectoryNode" />
+              <item name="CV_me" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545150454649" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/images" />
+      <recent name="$PROJECT_DIR$/CV_me/References" />
+      <recent name="$PROJECT_DIR$/CV_me/Interests" />
+      <recent name="$PROJECT_DIR$/CV_me/Awards" />
+      <recent name="$PROJECT_DIR$/CV_me/Languages" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="08a4331d-3527-4ebb-9fd2-057987fd5cc0" name="Default Changelist" comment="" />
+      <created>1545147281214</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1545147281214</updated>
+      <workItem from="1545147282923" duration="335000" />
+      <workItem from="1545147662009" duration="2787000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="3122000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="51" y="-4" width="1549" height="904" extended-state="6" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23220226" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="10" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" visible="true" weight="0.32947233" />
+      <window_info anchor="right" id="SciView" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Theme Preview" order="4" />
+      <window_info anchor="right" id="Maven" order="5" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Database" order="8" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Draft - Initial commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Draft - Initial commit" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Report_Latex/uitthesis.tex">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-443" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CV_me/Interests/section_interests.tex">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="13" lean-forward="true" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Report_Latex/Appendix1/appendix1.tex">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Report_Latex/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="30">
+            <caret line="2" column="41" lean-forward="true" selection-start-line="2" selection-start-column="41" selection-end-line="2" selection-end-column="41" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CV_me/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor>
+            <caret selection-end-line="2" selection-end-column="24" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CV_me/awesome-cv.tex">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="577">
+          <caret line="40" column="23" selection-start-line="40" selection-start-column="23" selection-end-line="40" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="30">
+            <caret line="2" column="24" lean-forward="true" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
