@@ -17,9 +17,11 @@
 %
 % This work consists of the files awesome-source-cv.cls 
 
-\ProvidesClass{awesome-source-cv}[2016/11/05 v1.6.1 Awesome Source CV Class]
+\ProvidesClass{style}[2018/07/19  v1.9.2 'YAAC: Another Awesome CV' Class]
 
 \LoadClass[a4paper]{article}
+
+\newif\if@showLinks   \@showLinksfalse
 
 \DeclareOption{green}{
   \def\@green{green}
@@ -36,6 +38,10 @@
   \def\@orange{orange}
 }
 
+\DeclareOption{monochrome}{
+  \def\@monochrome{monochrome}
+}
+
 \DeclareOption{localFont}{
   \def\@local{local}
 }
@@ -44,11 +50,13 @@
   \def\@alternative{alternate}
 }
 
+\DeclareOption{showLinks}{ \@showLinkstrue}
+
 \ProcessOptions
 
 % Dependences
 %A Few Useful Packages
-\RequirePackage[frenchb]{babel}
+\RequirePackage[english]{babel}
 \RequirePackage[utf8]{luainputenc}
 \RequirePackage{fontspec} 					                 % for loading fonts
 \RequirePackage{url,parskip} 	    % other packages for formatting
@@ -56,7 +64,7 @@
 \RequirePackage{fullpage}
 \RequirePackage[margin=1.5cm]{geometry}
 \RequirePackage{fontawesome}
-\RequirePackage{hyperref}\hypersetup{hidelinks}
+\RequirePackage{hyperref}
 \RequirePackage{titlesec}
 \RequirePackage{array}
 \RequirePackage{enumitem}
@@ -64,6 +72,8 @@
 \RequirePackage{etoolbox}
 \RequirePackage{tikz}
 \RequirePackage[skins]{tcolorbox}
+\RequirePackage{fancyhdr}
+\RequirePackage{amsmath}
 
 
 \DeclareUnicodeCharacter{00E9}{\'{e}}
@@ -73,7 +83,10 @@
 \ifundef{\@green} {
   \ifundef{\@red} {
     \ifundef{\@indigo}{
-      \ifundef{\@orange} {}
+      \ifundef{\@orange} {
+        \ifundef{\@monochrome} {}
+        { \definecolor{basecolor}{HTML}{000000}}
+      }
       { \definecolor{basecolor}{HTML}{e68a00} }
     }
     { \definecolor{basecolor}{rgb}{0.2, 0.07, 0.48} }
@@ -90,9 +103,27 @@
 
 % Setup hyperref package, and colours for links
 %\definecolor{linkcolour}{rgb}{0,0.2,0.6}
-\hypersetup{breaklinks}
 
-\pagestyle{empty}                         % non-numbered pages
+\if@showLinks
+  \hypersetup{%
+    breaklinks
+  }%
+\else
+  \hypersetup{%
+    pdfborder = {0 0 0},
+    breaklinks
+  }%
+\fi
+
+% Setup fancyhdr package
+\fancyhf{}
+\fancyhfoffset{0em}
+% Remove head rule
+\renewcommand{\headrulewidth}{0pt}
+%\fancyfoot[C]{\thepage}
+\pagestyle{fancy}
+
+%\pagestyle{empty}                         % non-numbered pages
 %\font\fb=''[cmr10]''                      % for use with \LaTeX command
 
 % Setup CV sections
@@ -101,6 +132,7 @@
 
 % Configure list
 \setlist[itemize,1]{label=\faAngleRight, nosep, leftmargin=2em} 
+\setlist[itemize,2]{label=\faAngleRight, nosep, leftmargin=1.5em} 
 
 % Setup Array : new column type
 \newcolumntype{R}[1]{>{\hfill}m{#1}}
@@ -112,27 +144,19 @@
 \defaultfontfeatures{Mapping=tex-text}
 %
 
-%-------------------------------------------------------------------------------
-%                Configuration for fonts
-%-------------------------------------------------------------------------------
-% Set the FontAwesome font to be up-to-date.
-\newfontfamily\FA[Path=fonts/]{FontAwesome}
-
 % Define font to use according to localFont option
 \ifundef{\@local}
 {
   %\setmainfont[BoldFont = Helvetica Neue, ItalicFont=Helvetica Neue Thin Italic ,SmallCapsFont = Helvetica Neue Light]{Helvetica Neue Thin}
-  \setmainfont[
-    BoldFont = Source Sans Pro Semibold, 
-    ItalicFont= Source Sans Pro Light Italic,
-    SmallCapsFont = Source Sans Pro]{Source Sans Pro Light}
+  \setmainfont{Source Sans Pro Light}[
+    BoldFont = SourceSansPro-Regular, 
+    ItalicFont= Source Sans Pro Light Italic]
 }
 {
-  \setmainfont[
+  \setmainfont{SourceSansPro-Light}[
     Path = fonts/, 
-    BoldFont = SourceSansPro-Semibold, 
-    ItalicFont = SourceSansPro-LightIt, 
-    SmallCapsFont = SourceSansPro-Regular]{SourceSansPro-Light}
+    BoldFont = SourceSansPro-Regular, 
+    ItalicFont = SourceSansPro-LightIt]
 }
 
 %New length definition
@@ -143,13 +167,11 @@
 \setlength{\leftcolumn}{2.5cm}
 
 % Font Awesome icons aliases
-\newcommand{\mailSymbol}{\faEnvelope}
-\newcommand{\mailSymbolO}{\faEnvelopeO} 
+\newcommand{\mailSymbol}{\faAt}
 \newcommand{\locationSymbol}{\faMapMarker}
 \newcommand{\infoSymbol}{\faInfo}
-\newcommand{\homeSymbol}{\faLink}
-\newcommand{\weiboSymbol}{\faWeibo}
 \newcommand{\linkedinSymbol}{\faLinkedin}
+\newcommand{\viadeoSymbol}{\faViadeo}
 \newcommand{\mobileSymbol}{\faMobilePhone}
 \newcommand{\githubSymbol}{\faGithub}
 
@@ -159,15 +181,12 @@
 % Create a tag
 % Usage: \cvtag{<tag label>}
 \newcommand{\cvtag}[1]{%
-  %\tikz[baseline]\node[anchor=base,draw=darkGrey!70,rounded corners=0.5ex,inner xsep=1ex,inner ysep =0.55ex,text height=1.3ex,text depth=.25ex]{#1};
-\begin{tikzpicture}
-	\node[anchor=base,draw=darkGrey!70,rounded corners=0.5ex,inner xsep=1ex,inner ysep =0.55ex,text height=1.3ex,text depth=.25ex]{#1};
-\end{tikzpicture}	  
+  \tikz[baseline]\node[anchor=base,draw=darkGrey!70,rounded corners=0.5ex,inner xsep=1ex,inner ysep =0.55ex,text height=1.3ex,text depth=.25ex]{#1};
 }
 
 % Render author's name
 % Usage: \user{<firstanme>}{<lastname>}
-\newcommand\user[2]{\color{accentcolor}{\LARGE #1 \textbf{#2}}\color{Black}}
+\newcommand\user[2]{\color{accentcolor}{\LARGE #1 \textsc{\textbf{#2}}}\color{Black}}
 
 % Render a text with its symbol
 % Usage; \socialtext{<icon>}{<label>}
@@ -175,7 +194,6 @@
 
 % Render a link with its symbol
 % Usage; \sociallink{<icon>}{<label>}
-%\newcommand{\sociallink}[3]{\mbox{\textcolor{symbolcolor}{#1}\hspace{0.5em}#2\hspace{1em}}}
 \newcommand{\sociallink}[3]{\mbox{\textcolor{symbolcolor}{#1}\hspace{0.5em}\link{#2}{#3}\hspace{1em}}}
 
 % Define author's name
@@ -205,18 +223,9 @@
 % Usage: \infos{<infos>}
 \newcommand*{\infos}[1]{\socialtext{\infoSymbol}{#1}}
 
-% Render author's homepage
-% Usage: \homepage{<homepage>}
-\newcommand*{\homepage}[1]{\sociallink{\homeSymbol}{http://#1}{#1}}
-
-% Render author's homepage
-% Usage: \weibo{<weibo>}
-\newcommand*{\weibo}[1]{\sociallink{\weiboSymbol}{http://www.weibo.com/#1}{weibo.com/#1}}
-
-
 % Render author's linked-in (optional)
 % Usage: \linkedin{<linked-in-nick>}
-\newcommand*{\linkedin}[1]{\sociallink{\linkedinSymbol}{http://www.linkedin.com/in/#1}{linkedin.com/in/#1}}
+\newcommand*{\linkedin}[1]{\sociallink{\linkedinSymbol}{http://www.linkedin.com/in/#1/fr}{linkedin.com/in/#1}}
 
 % Render author's viadeo(optional)
 % Usage: \viadeo{<viadeo-nick>}
@@ -229,7 +238,10 @@
 % Render author's email (optional)
 % Usage: \email{<email adress>}
 \newcommand*{\email}[1]{\sociallink{\mailSymbol}{mailto:#1}{#1}}
-\newcommand*{\emailO}[1]{\sociallink{\mailSymbolO}{mailto:#1}{#1}}
+
+% Render a website link (optional)
+% Usage: \email{<email adress>}
+\newcommand*{\website}[2]{\sociallink{\faExternalLink}{#1}{#2}}
 
 % Render author's mobile phone (optional)
 % Usage: \smartphone{<mobile phone number>}
@@ -237,89 +249,87 @@
 
 % Render author's tagline
 \newcommand\resumetitle[1]{
-  \ifundef{\@
-  	}{
+  \ifundef{\@alternative}{
 	 \par{
-	 	 \bigskip\center{\Large \color{accentcolor}\textsc{#1}\color{Black}}\par
+	 	 \bigskip\center{\Large \color{accentcolor}\textbf{#1}\color{Black}}\par
 	 }
 	 \bigskip
   }{
-   % \color{accentcolor}\textsc{\large{#1}}\color{black}
-	 \par{
-	 	\bigskip\center{\Large \color{accentcolor}\textsc{#1}\color{Black}}\par
-	 }
-	 \bigskip    
+    \color{accentcolor}\textbf{\large{#1}}\color{black}
   }
+}
+
+\newcommand\idphoto{
+  \tikz\path[fill overzoom image={\@photo}]circle[radius=0.5\linewidth];
 }
 
 % Define social entries to print in header
 \newcommand{\socialinfo}[1]{\def\@socialinfo{#1}}
 
-
 % Render CV header
 % Needs \@firstname, \@lastname and \@tagline to be defined
 \newcommand*{\makecvheader}{
-	\ifundef{\@alternative}{
-		 
-		\ifundef{\@photodiameter}{
-			\begin{minipage}{\linewidth}    	      	
-		}{
-			\begin{minipage}{\dimexpr\linewidth-\@photodiameter-2em}        	
-		}
-				\color{accentcolor}\user{\@firstname}{\@lastname}\color{black} \vspace*{0.3cm}\\				 	
-				\small{\@socialinfo}
-			\end{minipage}  
-		\ifdef{\@photodiameter}{
-			\begin{minipage}{\@photodiameter}
-				\begin{tikzpicture}%
-				\node[circle, text=white, minimum size=2.5cm,
-				path picture={\node at (path picture bounding box.center){
-						\includegraphics[width=2.5cm]{\@photo}
-					};
-				}]{ };
-				\end{tikzpicture}				
-			\end{minipage}
-		}{}
-	    \resumetitle{\@tagline}
-	}{
-	    \ifundef{\@photodiameter}{
-			\begin{minipage}{\linewidth}     	
-	    }{
-			\begin{minipage} {\dimexpr\linewidth-\@photodiameter-2em}    	
-	    }
-				\user{\@firstname}{\@lastname} \vspace*{0.3cm}\\
-				\resumetitle{\@tagline}
-				\smallskip\\
-				\small{\@socialinfo}
-			\end{minipage}  	    
-		\ifdef{\@photodiameter}{
-			\begin{minipage}{\@photodiameter}
-%				\begin{tikzpicture}%
-%				\node[circle, text=white, minimum size=2.5cm,
-%				path picture={\node at (path picture bounding box.center){
-%						\includegraphics[width=2.5cm]{\@photo}
-%					};
-%				}]{ };
-%				\end{tikzpicture}		
-				\begin{tikzpicture}%
-				\node[text=white, minimum width=2.8cm, minimum height=2.8cm, %minimum size=2.8cm,
-				path picture={\node at (path picture bounding box.center){
-						\includegraphics[width=2.5cm]{\@photo}
-					};
-				}]{ };
-				\end{tikzpicture}			
-			\end{minipage} 			
-%      \begin{minipage}{\@photodiameter}
-%      	\tikz\path[fill overzoom image={\@photo}]circle[radius=0.5\linewidth];
-%      \end{minipage}
-      			     	
-		}{}
-		\bigskip
-	}
+  \ifundef{\@alternative}{
+    \ifundef{\@photodiameter}{
+      \begin{minipage}{\linewidth}
+    }{
+      \begin{minipage}{\dimexpr\linewidth-\@photodiameter-2em}
+    }
+    \color{accentcolor}\user{\@firstname}{\@lastname}\color{black}\\
+    \small{\@socialinfo}
+    \end{minipage}
+    \ifdef{\@photodiameter}{
+      \begin{minipage}{\@photodiameter}
+        \idphoto
+      \end{minipage}
+    }{}
+    \resumetitle{\@tagline}
+  }{
+    \ifundef{\@photodiameter}{
+      \begin{minipage}{\linewidth}
+    }{
+      \begin{minipage}{\dimexpr\linewidth-\@photodiameter-2em}
+    }
+    \user{\@firstname}{\@lastname}\\
+    \resumetitle{\@tagline}
+    \smallskip\\
+    \small{\@socialinfo}
+    \end{minipage}
+    \ifdef{\@photodiameter}{
+      \begin{minipage}{\@photodiameter}
+        \idphoto
+      \end{minipage}
+    }{}
+    \bigskip
+  }
+}
+
+% Define a footer for CV
+% Usage: \makecvfooter{<left>}{<center>}{<right>}
+\newcommand*{\makecvfooter}[3]{%
+  \fancyfoot{}
+  \fancyfoot[L]{#1}
+  \fancyfoot[C]{#2}
+  \fancyfoot[R]{#3}
 }
 
 % Resume part title definition
-\newcommand\sectionTitle[2]{\section{\texorpdfstring{\color{accentcolor}#2\enspace #1}{#1}}}
+\newcommand\sectionTitle[2]{\section{\texorpdfstring{\color{accentcolor}#2\enspace \textsc{#1}}{#1}}}
+
+% Define the 'keywords' environment
+\newenvironment{keywords}{%
+  \renewcommand{\arraystretch}{1.1}
+
+  \begin{tabular}{>{}r>{}p{13cm}} 
+}{%
+  \end{tabular}
+}
+
+% Render a scholarshipentry in the scolarship environment
+% Usage: \scholarshipentry{<date>}{<description>}
+\newcommand\keywordsentry[2]{
+  \textbf{#1} &   #2\\ 
+}
 
 % Define a new column type for the scholarship environment
 \newcolumntype{Y}{>{\raggedleft}p{\leftcolumn}}
@@ -339,7 +349,7 @@
 
 % Define the 'skills' environment
 \newenvironment{skills}{%
-  \begin{longtable}{R{\leftcolumn}p{\rightcolumnlength}}
+	\begin{longtable}{ll}
 }{%
   \end{longtable}
 }
@@ -347,7 +357,7 @@
 % Render a skill in the skills environment
 % Usage: \skill{<skill>}{<level>}
 \newcommand\skill[2]{
-  \textsc{#1}    & \foreach \x in {1,...,5}{{\color{accentcolor!80} \ifnumgreater{\x}{#2}{\faCircleO}{\faCircle}}\enspace } 
+  \textbf{#1}    & \foreach \x in {1,...,5}{{\color{accentcolor!80} \ifnumgreater{\x}{#2}{\faCircleThin}{\faCircle}}\enspace } \\
 }
 
 \newcolumntype{E}{>{\raggedright\arraybackslash}p{\rightcolumnlength}}
@@ -368,8 +378,8 @@
 %                    }
 %                    {<Technology list>}
 \newcommand\experience[7]{
-  \textsc{#1}    & \textsc{#2, #3, #4}   								\\*
-  \textsc{#5}    & \begin{minipage}[t]{\rightcolumnlength}
+  \textbf{#1}    & \textbf{#2, \textsc{#3}, #4}   								\\*
+  \textbf{#5}    & \begin{minipage}[t]{\rightcolumnlength}
   					         #6
                    \end{minipage}										\\*
                  & \footnotesize{\foreach \n in {#7}{\cvtag{\n}}} 	\\
@@ -385,8 +395,8 @@
 %                    }
 %                    {<Technology list>}
 \newcommand\consultantexperience[9]{
-  \textsc{#1}    & \textsc{#2, #3, #4}   								\\*
-  \textsc{#5}    & \emph{#6} pour #7                       				\\*
+  \textbf{#1}    & \textbf{#2, \textsc{#3}, #4}   								\\*
+  \textbf{#5}    & \emph{#6} pour \textsc{#7}                       				\\*
   				       & 	\begin{minipage}[t]{\rightcolumnlength}
   						        #8
                    	\end{minipage}										\\*
@@ -394,3 +404,72 @@
   }
 
 \newcommand\emptySeparator{\multicolumn{2}{c}{}\\}
+
+% Define the 'projects' environment
+\newenvironment{projects}{%
+  \begin{longtable}{l}
+}{%
+  \end{longtable}
+}
+
+% Define the 'project' entry in the 'projects' environment
+% Usage:
+% \project
+%   {<Project name>}{<dates>}
+%   {<link1> <link2>}
+%   {<Project description>}
+%   {<techno1>,<techno2>}
+\newcommand\project[5]{
+  \begin{minipage}[t]{\dimexpr(\linewidth) - 1.5em}
+    \textbf{\textsc{#1}} \hfill \textsc{#2}\smallskip\\
+    #3\\
+    #4\smallskip\\
+    \footnotesize{\foreach \n in {#5}{\cvtag{\n}}}\\
+  \end{minipage}
+  \\*
+}
+
+
+\newcommand*\twocolumnsection[2]{
+  \begin{minipage}[t]{\dimexpr(\linewidth/2) - 3em}
+    #1
+  \end{minipage}
+  \hfill
+  \begin{minipage}[t]{\dimexpr(\linewidth/2) - 3em}
+    #2
+  \end{minipage}
+  }
+
+\newcommand*\threecolumnsection[3]{
+	\begin{minipage}[t]{\dimexpr(0.28\linewidth) - 1em}
+	  #1
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{\dimexpr(0.43\linewidth) - 1em}
+		#2
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{\dimexpr(0.29\linewidth) - 1em}
+		#3
+	\end{minipage}
+	}
+
+% Define the 'referencees' environment
+\newenvironment{referees}{%
+}{%
+  \hfill
+  \bigskip
+}
+
+\newcommand*\referee[5]{
+  \hspace{1em}
+  \begin{minipage}[t]{\dimexpr(\linewidth/3) - 3em}
+    \begin{tabular}{>{}l >{}l}
+      \multicolumn{2}{l}{\textbf{#1}}\\
+      \multicolumn{2}{l}{\emph{#2}, \textsc{#3}}\\
+      \quad \mailSymbol & \href{mailto:#4}{#4} \\  
+      \quad \faPhone & #5 \\
+    \end{tabular}
+  \end{minipage}%
+}
+
