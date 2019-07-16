@@ -1,0 +1,9 @@
+dist/
+*.aux
+*.acn
+*.bbl
+*.blg
+*.log
+*.idx
+*.out
+*.xdy
