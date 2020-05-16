@@ -1,0 +1,63 @@
+% !TEX TS-program = luatex
+% cSpell:ignore luatex Christophe Darwiin
+ 
+
+\documentclass[localFont, alternative]{style}
+
+	\name{}{DUY DO VAN }
+	\tagline{Student at Ton Duc Thang University}
+	% | \\ Database Security, Secure Range Query protocols, ORE / OPE schemes, ORAM}
+	\photo{3.5cm}{images/me}
+	\socialinfo{
+		\website{http://www.thedevportfolio.xyz/}{thedevportfolio.xyz}
+		\linkedin{duyhenryer}
+		\github{duyhenryer} \\
+		\smartphone{+84 971 210 898}
+		\email{duyhenry250897@gmail.com}\\
+		\address{1017/54/8 Le Van Luong Street, District 7} \\
+		\infos{I come from Quang Ngai}
+	}
+
+	\usepackage[
+		backend=biber,
+		style=alphabetic,
+		giveninits=true,
+		sorting=ydnt,
+		maxbibnames=1000
+	]{biblatex}
+
+	\bibliography{publications}
+
+	\renewcommand*{\mkbibnamegiven}[1]{%
+		\ifitemannotation{highlight}
+		{\textbf{#1}}
+		{#1}
+	}
+
+	\renewcommand*{\mkbibnamefamily}[1]{%
+		\ifitemannotation{highlight}
+		{\textbf{#1}}
+		{#1}
+	}
+
+\begin{document}
+
+	\makecvheader%
+
+	\makecvfooter%
+		{\textsc{\selectlanguage{english}\today}}
+		{\textsc{CV}}
+		{\thepage}
+
+	\input{sections/headline}
+	\input{sections/skills}
+	\input{sections/education}
+%	\input{sections/publications}
+%	\input{sections/conferences}
+%	\input{sections/reviews}
+	\input{sections/experience}
+	\input{sections/projects}
+	\input{sections/achievements}
+%	\input{sections/referees}
+
+\end{document}
